@@ -1,0 +1,164 @@
+=== Rev 27 === Wed Sep 1 22:45:59 2010 UTC      (akien)
+Ajout de CREDITS.
+Ajout d'une ébauche de terrain 32x32, 'cave'.
+Ajout d'un prototype de personnage pour faire des tests, et modifications de main.py et globales.py pour les tests.
+
+
+=== Rev 26 === Fri Aug 27 09:58:12 2010 UTC     (akien)
+Ajout d'une classe Matrice modélisant une matrice mathématique.
+Celle-ci suit les conventions mathématiques, et donc mat[i,j] est la case située à la i-ème ligne et j-ème colonne.
+A voir si c'est utile pour nous ou s'il faut qu'on adapte la matrice mathématique aux matrices que l'on a utilisées juqu'à maintenant.
+
+
+=== Rev 25 === Fri Aug 27 09:19:45 2010 UTC     (akien)
+RéRéorganisation des données, deuxième partie.
+Création des sous-dossiers de image, selon le schéma suivant :
+image / taille de la tile en pixel / type d'image / (type de terrain / si terrain) nom.gif
+
+Modification de main.py en conséquence.
+Faire attention à appeler str(case) dans les chemins, et non pas case.
+
+
+=== Rev 24 === Fri Aug 27 09:02:08 2010 UTC     (akien)
+Réorganisation des données, première partie.
+Suppression de img et snd, création de audio et image.
+
+
+=== Rev 23 === Sat Aug 21 17:19:25 2010 UTC     (akien)
+Modification du main.py pour être un exécutable SHELL.
+Corrections d'erreurs de syntaxe et de placement dans globales.py.
+
+
+=== Rev 22 === Sat Aug 21 12:17:21 2010 UTC     (akien)
+Légères modifications de globales.py.
+
+
+=== Rev 21 === Sat Aug 21 08:16:02 2010 UTC	(akien)
+Modification manuelle du CHANGELOG (rev 1 à 20).
+
+Modification du dictionnaire player, avec ajout de caractéristiques et d'équipements.
+
+
+=== Rev 20 === Sat Aug 21 07:22:24 2010 UTC	(akien)
+Passage d'un niveau P à un niveau Q effectif. Chaque niveau non existant est généré aléatoirement en partant de la position du héros, puis stocké dans niv.
+La conservation de la variable lvl est maintenant effective.
+
+Simplification de l'affichage : le canevas est effacé entièrement tous les MAXAFF déplacements puis redessiné.
+Le champ de vision est maintenant effacé dans la fonction deplacerAction() si objet == player, ce qui permet de réduire la zone a effacer d'une case (avant le déplacement).
+
+Ajout d'une fonction rollDice prenant en argument un string de type 'PdQ' (P dés à Q faces). Renvoie la somme des dés.
+
+
+=== Rev 19 === Fri Aug 20 16:20:45 2010 UTC	(akien)
+Ajout du terrain 'demineur'.
+Les terrains sont stockés dans une liste 'terrains'.
+
+Modification de compterVoisins pour la gestion des escaliers.
+Petite amélioration du système de génération de nouveaux niveaux, toujours inefficace.
+
+Modification des escaliers de forêt (sol en terre).
+
+
+=== Rev 18 === Fri Aug 20 08:41:37 2010 UTC	(akien)
+Petite réorganisation cosmétique du bloc des fonctions.
+
+
+=== Rev 17 === Thu Aug 19 19:50:58 2010 UTC	(akien)
+Séparation des variables globales et constantes dans un nouveau fichier.
+
+Regroupement d'instructions du corps sous forme de fonctions.
+Ebauche d'un système permettant de passer d'un niveau au suivant, pour l'instant non fonctionnel.
+
+
+=== Rev 16 === Thu Aug 19 18:57:51 2010 UTC	(akien)
+Ajout du README, LICENSE, CHANGELOG, et TODO-list.txt.
+Ajout de la mention de la licence GPLv3 dans l'en-tête de main.py.
+Ajout de la mention du copyright dans l'interpréteur de commandes.
+
+
+=== Rev 15 === Thu Aug 19 18:34:32 2010 UTC	(akien)
+Ajout du char "fée".
+Modification de l'algorithme d'affichage du champ de vision (doFov et afficherVision).
+
+Choix aléatoire du type de terrain.
+
+
+=== Rev 14 === Thu Aug 19 15:25:47 2010 UTC	(akien)
+Ajout d'une constante terrain prenant pour valeur 'foret' ou 'donjon' selon les tiles souhaitées (solution provisoire).
+
+Ajout et modifications de tiles pour la forêt (les murs sont des arbres, le chemin est en terre, les colonnes sont des souches).
+
+
+=== Rev 13 === Thu Aug 19 10:59:39 2010 UTC	(akien)
+Merge effectué.
+L'escalier montant est maintenant intégré dans un mur, et donc en murDark quand hors de vue. Le joueur pop à côté de cet escalier montant.
+
+
+=== Rev 12 === Wed Aug 18 18:14:05 2010 UTC	(akien)
+Ajout d'une case de valeur 3, représentant un escalier montant (niveauSup), tandis que la valeur 2 représente un escalier descendant (niveauInf).
+escalier-mont.gif demande à être modifié pour cause.
+
+La case de valeur 3 est placée sous le point de pop du héros à la création du niveau.
+
+
+=== Rev 11 === Wed Aug 18 12:38:49 2010 UTC	(akien)
+Ajout de la possibilité de changer de direction face à un mur.
+Ajout d'une liste de matrices nommée niv. La variable lvl stocke le niveau courant.
+Attention, tous les entêtes de fonctions ont changé.
+
+Ajout d'un escalier montant, à dessiner.
+
+
+=== Rev 10 === Tue Aug 17 16:06:11 2010 UTC	(akien)
+Amélioration du minotaure avec Elise et ajout de la vue de dos.
+Création d'un escalier-dark.gif qui n'est en fait pas dark (à modifier).
+
+Merge de nos deux fichiers, ne pas hésiter à faire un diff sur la version précédente et sur ta version actuelle pour vérifier qu'il n'y a pas eu d'erreur grave.
+
+
+=== Rev 9 === Tue Aug 17 09:07:36 2010 UTC	(akien)
+Transparence ajoutée à chaque char, ajout d'une ébauche de minotaure-b (il est moche, il faudra faire mieux).
+
+Modification de la fonction d'affichage, divisée en trois fonctions : afficherDonjonInit() pour la création de la matrice, afficherVision() pour le champ de vision et cacherVision() pour effacer ce qui n'est plus dans le champ de vision (efface tout en fait).
+
+Réduction du champ de vision à 5 cases.
+Praticabilité de l'escalier.
+
+
+=== Rev 8 === Mon Aug 16 13:48:49 2010 UTC	(akien)
+Ajout du gnome, du logo, d'un bouton pour changer de Race.
+L'escalier est impraticable, et il reste le problème de réaffichage de la matrice à chaque mouvement.
+
+
+=== Rev 7 === Mon Aug 16 13:28:44 2010 UTC	(akien)
+Dernière version antérieure à l'ouverture du dépôt. A re-tester et éventuellement débogguer avant de continuer le développement.
+
+
+=== Rev 6 === Mon Aug 16 10:09:15 2010 UTC	(akien)
+Réorganisation des données sous la forme :
+
+type/objet/ (par exemple img/char/ pour les personnages, img/monster/ pour les monstres, img/donjon/ pour les tiles de base, img/foret/ pour la forêt).
+
+Le code n'est pas encore bien adapté à cette organisation néanmoins.
+
+
+=== Rev 5 === Mon Aug 16 09:54:06 2010 UTC	(akien)
+Modification des tiles basiques.
+Ajout de l'orientation N/S/E/W.
+
+
+=== Rev 4 === Mon Aug 16 09:47:11 2010 UTC	(akien)
+Deuxième version.
+Ajout du chemin img/ dans l'import d'images.
+
+
+=== Rev 3 === Mon Aug 16 09:45:27 2010 UTC	(akien)
+Première version.
+
+
+=== Rev 2 === Mon Aug 16 09:39:23 2010 UTC	(akien)
+Ajout de trunk/img/
+
+
+=== Rev 1 === Mon Aug 16 09:35:25 2010 UTC	(akien)
+Ajout de branches/ tags/ et trunk/

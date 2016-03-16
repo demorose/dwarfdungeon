@@ -1,0 +1,36 @@
+(DONE) - Ajout d'un README, LICENSE, CHANGELOG.           Je m'en charge (tu es OK sur les licences que j'ai choisi ?)
+
+(A moitié DONE) - Séparation de main.py en plusieurs fichiers : functions.py, globales.py, main.py              Je vais m'en occuper aussi prochainement
+
+- Dessin de minotaure-g et minotaure-d
+
+- Fonction calculant si un objet doué d'un certain objet['vision'] voit le héros.
+
+- Fonction réalisant le déplacement d'un objet donné dans une direction aléatoire quand le joueur est hors de vue, dans la direction du joueur quand celui est en vue.
+
+(DONE) - Fonction calculant les dégats provoqués (ça t'irait des armes avec des attributs chiffrés en dés, genre 2d6 ?)                 Je m'en occupe aussi quand j'ai séparé 
+main.py
+
+- Réfléchir à comment gérer plusieurs unités sans que ce soit bordélique (faire déplacement tous les monstres de manière automatisée et dynamique).
+
+(DONE) - Passage d'un niveau à un autre
+
+- Outils de création du personnage (nom, race, histoire?)
+
+- Changement des stats en fonction de la race du personnage
+
+- Creation d'un dictionnaire d'arme / objet (ou une base de donnée MySQL ?)        Ce sera des fichiers texte structurés.
+
+(DONE) - Rédaction de la trame de l'histoire, histoire de ne pas se lancer sans un fils conducteur
+
+(A moitié DONE) - Définition des classes: Heros, Monstre, Objet, Niveau (fait), Matrice (fait)
+
+- Réalisation du GUI (Graphical User Interface), en 800x560
+
+- Dessin d'un skin "pierre" pour le GUI
+
+- Réalisation de tiles adaptées à la configuration de terrain utilisant la matrice niveau.profil.
+
+- Rédaction des données concernant des monstres, des objets, des races.
+
+- 
